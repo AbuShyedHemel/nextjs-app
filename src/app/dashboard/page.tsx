@@ -1,7 +1,9 @@
+import { Button } from "@/components/ui/button";
+
 const index = () => {
   return (
     <div className="text-center">
-      <button>Click</button>
+      <Button className="bg-slate-400">Click</Button>
     </div>
   );
 };
