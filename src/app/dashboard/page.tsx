@@ -1,7 +1,7 @@
 const index = () => {
   return (
-    <div>
-      <button>Das</button>
+    <div className="text-center">
+      <button>Click</button>
     </div>
   );
 };
