@@ -1,3 +1,5 @@
+import { ThemeProvider } from "@/components/theme-provider";
+
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
@@ -5,10 +7,14 @@ export default function DashboardLayout({
 }) {
   return (
     <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
-      <nav></nav>
-
-      {children}
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
     </section>
   );
 }

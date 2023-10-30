@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 const Page = () => {
@@ -21,6 +22,7 @@ const Page = () => {
           </Link>
         </li>
       </ul>
+      <Button onClick={() => router.push("/home")}>Change Page</Button>
     </div>
   );
 };
