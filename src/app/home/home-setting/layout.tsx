@@ -1,14 +1,16 @@
-export default function DashboardLayout({
-  children, // will be a page or nested layout
-}: {
+import React from "react";
+
+export default function DashboardLayout(props: {
   children: React.ReactNode;
+  firstName: React.ReactNode;
+  lastName: React.ReactNode;
 }) {
   return (
-    <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
-      <nav></nav>
-
-      {children}
-    </section>
+    <div className="grid grid-cols-3 gap-4 text-center">
+      {/* for parallel routing */}
+      {props.children}
+      {props.firstName}
+      {props.lastName}
+    </div>
   );
 }
