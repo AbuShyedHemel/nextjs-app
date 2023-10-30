@@ -1,7 +1,13 @@
-type Props = {};
+const data = fetch("https://jsonplaceholder.typicode.com/todos/hi")
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 
-const HomeSettings = (props: Props) => {
-  return <div>HomeSettings</div>;
+const HomeSettings = () => {
+  return (
+    <div>
+      <h1>hi</h1>
+    </div>
+  );
 };
 
 export default HomeSettings;
