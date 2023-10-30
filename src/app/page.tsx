@@ -9,7 +9,10 @@ const Page = () => {
     <div>
       <ul>
         <li>
-          <Link className={`Link ${pathname === "/" ? "active" : ""}`} href="/">
+          <Link
+            className={`Link ${pathname === "/" ? "active" : ""}`}
+            href="/home-dashboard"
+          >
             Dashboard
           </Link>
         </li>
