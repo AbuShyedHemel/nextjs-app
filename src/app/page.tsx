@@ -6,27 +6,19 @@ const Page = () => {
   const pathname = usePathname();
   const router = useRouter();
   return (
-    <div>
-      <ul>
-        <li>
-          <Link
-            className={`Link ${pathname === "/" ? "active" : ""}`}
-            href="/home-dashboard"
-          >
-            Dashboard
-          </Link>
-        </li>
-        <li>
+    <body>
+      <ol>
+        <div className="text-center justify-center">
           <Link
             className={`Link ${pathname === "/home" ? "active" : ""}`}
             href="/home"
           >
-            Home
+            <Button className="bg-slate-500">Home</Button>
           </Link>
-        </li>
-      </ul>
-      <Button onClick={() => router.push("/home")}>Change Page</Button>
-    </div>
+        </div>
+      </ol>
+      {/* <Button onClick={() => router.push("/home")}>Change Page</Button> */}
+    </body>
   );
 };
 

@@ -9,8 +9,11 @@ import {
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
-
-const HomePage = () => {
+import { FC } from "react";
+type HomePageProps = {
+  isActive?: boolean;
+};
+const HomePage: FC<HomePageProps> = ({ isActive }) => {
   const { setTheme } = useTheme();
   const router = useRouter();
   return (
@@ -35,9 +38,21 @@ const HomePage = () => {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      <Button onClick={() => router.push("home/home-dashboard")}>
-        Go to Dashboard
-      </Button>
+      <div className="text-center" hidden={isActive}>
+        <Button
+          className="bg-red-500"
+          onClick={() => router.push("home/home-setting")}
+        >
+          Go to Home-Settings
+        </Button>
+
+        <Button
+          className="bg-purple-400"
+          onClick={() => router.push("home/home-dashboard")}
+        >
+          Go to Home-Dashboard
+        </Button>
+      </div>
     </>
   );
 };
