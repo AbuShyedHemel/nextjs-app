@@ -10,6 +10,8 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
+import { CalendarDateRangePicker } from "./home-dashboard/components/date-range-picker";
+import { UserNav } from "./home-dashboard/components/user-nav";
 type HomePageProps = {
   isActive?: boolean;
 };
@@ -36,6 +38,9 @@ const HomePage: FC<HomePageProps> = ({ isActive }) => {
           <DropdownMenuItem onClick={() => setTheme("system")}>
             System
           </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setTheme("blue")}>
+            Red
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
       <div className="text-center" hidden={isActive}>
@@ -52,6 +57,8 @@ const HomePage: FC<HomePageProps> = ({ isActive }) => {
         >
           Go to Home-Dashboard
         </Button>
+        <CalendarDateRangePicker />
+        <UserNav />
       </div>
     </>
   );
